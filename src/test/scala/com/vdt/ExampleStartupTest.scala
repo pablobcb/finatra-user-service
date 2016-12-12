@@ -1,4 +1,4 @@
-package com.example
+package com.vdt
 
 import com.google.inject.Stage
 import com.twitter.finatra.http.test.EmbeddedHttpServer

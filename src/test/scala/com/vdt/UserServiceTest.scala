@@ -1,4 +1,4 @@
-package com.example
+package com.vdt
 
 import com.twitter.finagle.http.Status.Ok
 import com.twitter.finatra.http.test.EmbeddedHttpServer
@@ -9,11 +9,9 @@ class UserServiceTest extends FeatureTest {
   override val server = new EmbeddedHttpServer(new Server)
 
   "User Service" should {
-    "ping" in {
-      server.httpGet(
-        path = "/ping",
-        andExpect = Ok,
-        withBody = "pong")
+
+    "201 with 'id'" in {
+      //server.httpGet( path = "/user", andExpect = Ok, withBody = "pong")
     }
   }
 }
