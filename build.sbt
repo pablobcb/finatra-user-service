@@ -22,7 +22,7 @@ lazy val versions = new {
   val mockito = "1.9.5"
   val scalatest = "2.2.3"
   val specs2 = "2.3.12"
-  val quill = "1.0.1"
+  val quillAsync = "1.0.1"
 }
 
 libraryDependencies ++= Seq(
@@ -48,5 +48,5 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % versions.scalatest % "test",
   "org.specs2" %% "specs2" % versions.specs2 % "test",
   "org.postgresql" % "postgresql" % "9.4.1208",
-  "io.getquill" %% "quill-jdbc" % versions.quill
+  "io.getquill" %% "quill-async-postgres" % versions.quillAsync
 )
