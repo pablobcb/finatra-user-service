@@ -1,5 +1,6 @@
 package com.example
 
+import com.example.controller.PingController
 import com.twitter.finagle.http.{Request, Response}
 import com.twitter.finatra.http.HttpServer
 import com.twitter.finatra.http.filters.{CommonFilters, LoggingMDCFilter, TraceIdMDCFilter}
@@ -7,13 +8,13 @@ import com.twitter.finatra.http.routing.HttpRouter
 import com.twitter.finatra.json.modules.FinatraJacksonModule
 import com.twitter.finatra.json.utils.CamelCasePropertyNamingStrategy
 
-object ExampleServerMain extends ExampleServer
+object ServerMain extends Server
 
 object CustomJacksonModule extends FinatraJacksonModule {
   override val propertyNamingStrategy = CamelCasePropertyNamingStrategy
 }
 
-class ExampleServer extends HttpServer {
+class Server extends HttpServer {
 
   override def defaultFinatraHttpPort = ":9999"
   override def jacksonModule = CustomJacksonModule
@@ -24,6 +25,5 @@ class ExampleServer extends HttpServer {
       .filter[CommonFilters]
       .add[PingController]
   }
-
 
 }
