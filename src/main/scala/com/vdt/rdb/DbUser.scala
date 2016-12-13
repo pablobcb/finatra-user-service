@@ -30,7 +30,7 @@ object DbUser {
   }
 
 
-  def getById(id: Long) =
+  def getById(id: Long): Future[Option[User]] =
     Db.ctx.run(getByIdQuery)
 
 
